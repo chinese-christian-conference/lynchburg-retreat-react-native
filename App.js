@@ -1,21 +1,39 @@
 import React from 'react';
+import { AppLoading } from 'expo';
 import { StyleSheet, Text, View } from 'react-native';
+import RootNav from './rootnav/RootNav';
+// import { Record } from 'immutable';
 
 export default class App extends React.Component {
+  state = {
+    hasLoaded: false
+  };
+
   render() {
+    if (!this.state.hasLoaded){
+      return (
+        <AppLoading
+          startAsync={this._loadAsync}
+          onError={this._onError}
+          onFinish={this._onFinish} />
+      );
+    }
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <RootNav />
     );
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  _loadAsync = async () => {
+    console.log('loading App');
+    return Promise.resolve(true);
+  };
+
+  _onError = e => {
+    console.warn(_onError, e);
+  };
+
+  _onFinish = () => {
+    this.setState({hasLoaded: true});
+  };
+
+}
