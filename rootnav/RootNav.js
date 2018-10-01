@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createDrawerNavigator } from 'react-navigation';
 
+import GridNav from '../gridnav/GridNav';
+
 class Dummy extends React.Component {
   render() {
     return (
@@ -13,12 +15,11 @@ class Dummy extends React.Component {
 }
 
 export default createDrawerNavigator({
-  Main: {
-    screen: Dummy
-  }
+  Home: GridNav,
+  Main: Dummy
 }, {
   drawerWidth: 256,
-  initialRouteName: 'Main'
+  initialRouteName: 'Home'
 });
 
 const styles = StyleSheet.create({
