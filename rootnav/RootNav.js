@@ -3,20 +3,27 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createDrawerNavigator } from 'react-navigation';
 
 import GridNav from '../gridnav/GridNav';
-
-class Dummy extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Dummy Component!</Text>
-      </View>
-    );
-  }
-}
+import ProgramRoot from '../program/ProgramRoot';
+import SpeakersRoot from '../speakers/SpeakersRoot';
+import HymnsRoot from '../hymns/HymnsRoot';
+import MapsRoot from '../maps/MapsRoot';
+import RegistrationRoot from '../registration/RegistrationRoot';
+import PolicyRoot from '../policy/PolicyRoot';
+import ContactsRoot from '../contacts/ContactsRoot';
+import PhotosRoot from '../photos/PhotosRoot';
+import AboutUsRoot from '../about/AboutUsRoot';
 
 export default createDrawerNavigator({
   Home: GridNav,
-  Main: Dummy
+  Program: ProgramRoot,
+  Speakers: SpeakersRoot,
+  Hymns: HymnsRoot,
+  Maps: MapsRoot,
+  Registration: RegistrationRoot,
+  Policy: PolicyRoot,
+  Contacts: ContactsRoot,
+  Photos: PhotosRoot,
+  About: AboutUsRoot
 }, {
   drawerWidth: 256,
   initialRouteName: 'Home'

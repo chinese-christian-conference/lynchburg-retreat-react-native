@@ -6,7 +6,15 @@ export default class GridNav extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Grid Nav</Text>
-        {this.getButton('Main')}
+        {this.getButton('Program')}
+        {this.getButton('Speakers')}
+        {this.getButton('Hymns')}
+        {this.getButton('Maps')}
+        {this.getButton('Registration')}
+        {this.getButton('Policy')}
+        {this.getButton('Contacts')}
+        {this.getButton('Photos')}
+        {this.getButton('About')}
       </View>
     );
   }
@@ -27,6 +35,8 @@ export default class GridNav extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
